@@ -1,0 +1,71 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x121f07520 .scope module, "bit_karsilastiricitb" "bit_karsilastiricitb" 2 1;
+ .timescale 0 0;
+v0x121f1c4d0_0 .var "A", 0 0;
+v0x121f1c580_0 .net "AbB", 0 0, L_0x121f1cab0;  1 drivers
+v0x121f1c610_0 .net "AeB", 0 0, L_0x121f1cba0;  1 drivers
+v0x121f1c6c0_0 .net "AkB", 0 0, L_0x121f1c9c0;  1 drivers
+v0x121f1c770_0 .var "B", 0 0;
+S_0x121f057f0 .scope module, "uut" "bit_karsilastirici" 2 6, 3 1 0, S_0x121f07520;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "A";
+    .port_info 1 /INPUT 1 "B";
+    .port_info 2 /OUTPUT 1 "AkB";
+    .port_info 3 /OUTPUT 1 "AeB";
+    .port_info 4 /OUTPUT 1 "AbB";
+L_0x121f1c840 .functor NOT 1, v0x121f1c4d0_0, C4<0>, C4<0>, C4<0>;
+L_0x121f1c910 .functor NOT 1, v0x121f1c770_0, C4<0>, C4<0>, C4<0>;
+L_0x121f1c9c0 .functor AND 1, L_0x121f1c840, v0x121f1c770_0, C4<1>, C4<1>;
+L_0x121f1cab0 .functor AND 1, v0x121f1c4d0_0, L_0x121f1c910, C4<1>, C4<1>;
+L_0x121f1cba0 .functor NOR 1, L_0x121f1cab0, L_0x121f1c9c0, C4<0>, C4<0>;
+v0x121f06490_0 .net "A", 0 0, v0x121f1c4d0_0;  1 drivers
+v0x121f1c060_0 .net "A1", 0 0, L_0x121f1c840;  1 drivers
+v0x121f1c100_0 .net "AbB", 0 0, L_0x121f1cab0;  alias, 1 drivers
+v0x121f1c190_0 .net "AeB", 0 0, L_0x121f1cba0;  alias, 1 drivers
+v0x121f1c230_0 .net "AkB", 0 0, L_0x121f1c9c0;  alias, 1 drivers
+v0x121f1c310_0 .net "B", 0 0, v0x121f1c770_0;  1 drivers
+v0x121f1c3b0_0 .net "B1", 0 0, L_0x121f1c910;  1 drivers
+    .scope S_0x121f07520;
+T_0 ;
+    %vpi_call 2 14 "$dumpfile", "bdmp.vcd" {0 0 0};
+    %vpi_call 2 15 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x121f1c4d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x121f1c770_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x121f1c4d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x121f1c770_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x121f1c4d0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x121f1c770_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x121f1c4d0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x121f1c770_0, 0, 1;
+    %delay 10, 0;
+    %vpi_call 2 22 "$display", v0x121f1c6c0_0 {0 0 0};
+    %vpi_call 2 23 "$display", v0x121f1c610_0 {0 0 0};
+    %vpi_call 2 24 "$display", v0x121f1c580_0 {0 0 0};
+    %vpi_call 2 26 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "bit_karsilastiricitb.v";
+    "bit_karsilastirici.v";
