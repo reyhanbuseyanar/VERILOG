@@ -10,7 +10,7 @@ wire A1, B1;
 
 
     // NOT Kapıları
-    not n1 (A1, A); 
+    not n1 (A1, A);
     not n2 (B1, B);
 
     // AND Kapıları

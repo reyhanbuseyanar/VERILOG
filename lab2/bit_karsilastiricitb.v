@@ -1,7 +1,7 @@
 module bit_karsilastiricitb();
 
-    reg A, B;           
-    wire AkB, AeB, AbB; 
+    reg A, B;
+    wire AkB, AeB, AbB;
 
     bit_karsilastirici uut (
         .A(A),
@@ -11,8 +11,8 @@ module bit_karsilastiricitb();
         .AbB(AbB)
     );
     initial begin
-        $dumpfile("bdmp.vcd"); 
-        $dumpvars(); 
+        $dumpfile("bdmp.vcd");
+        $dumpvars();
 
         A = 0; B = 0; #10;
         A = 0; B = 1; #10;
@@ -23,7 +23,7 @@ module bit_karsilastiricitb();
         $display(AeB);
         $display(AbB);
 
-        $finish; 
+        $finish;
 
 
 end
